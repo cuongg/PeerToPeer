@@ -3,6 +3,7 @@
 #include <sys/socket.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <netinet/in.h>
 struct FileLocationRequest{
 	char type;
 	char *FileName;
@@ -18,7 +19,7 @@ struct FileLocationRespond{
 	uint64_t fileSize;
 	uint8_t total;
 	struct in_addr IP[256];
-	unsigned short port[256];	
+	unsigned short port[256];
 };
 
 struct RequestData{
