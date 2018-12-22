@@ -58,6 +58,7 @@ int main(int argc,char **agrv){
     	perror("setsockopt(SO_REUSEADDR) failed");
     }
 
+	/*setup parameter for socket*/
 	bzero(&sockaddr, sizeof(struct sockaddr_in));
 	sockaddr.sin_family = AF_INET;
 	sockaddr.sin_port = htons(14459);
@@ -73,7 +74,6 @@ int main(int argc,char **agrv){
 
 
 	while(1){
-
 			newfd = malloc(sizeof(int));
 			cliaddr_len = sizeof(cliaddr);
 
