@@ -5,20 +5,21 @@
 #include <stdint.h>
 struct FileLocationRequest{
 	char type;
-	char *FileName;
+	char FileName[8];
 };
 
 struct ListFileReport{
 	char type;
 	uint8_t quantity;
-	char **List;
+	char List[20][8];
+	int size[20];
 };
 
 struct FileLocationRespond{
 	uint64_t fileSize;
 	uint8_t total;
 	struct in_addr IP[256];
-	unsigned short port[256];	
+	unsigned short bandwidth[256];
 };
 
 struct RequestData{
